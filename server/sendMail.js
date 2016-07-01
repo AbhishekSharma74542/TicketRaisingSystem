@@ -2,7 +2,7 @@
 		var domain = 'triconinfotech.com';
 		var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 		var allData = [];
-		
+		//Function to send Mail
 		exports.sendMail = function(req,res){
 		var delay = req.body.delay;
 		console.log("Delay is :: "+delay/1000+" seconds");

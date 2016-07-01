@@ -20,6 +20,7 @@
 	//Defining Controller One
 	myApp.controller('myCtrl', function($scope,$http,$routeParams,sendingEmail) { 
 		$scope.Persons = [];
+		
 		$scope.Priorities = ["Critical","High Priority","Low Priority"];
 		
 		$scope.Departments = [];
@@ -32,6 +33,7 @@
 			  $scope.Departments.push(key);
 			});
 		});
+		//Code To Dynamically change Persons According to department
 		$scope.changeDepartment = function(dept){
 			
 			$scope.Persons = toSetPerson(dept);
@@ -57,6 +59,7 @@
 			}
 			return Employees;
 		}
+		//Saving the Issue Object as well as assigning time to send Ping
 		$scope.saveInfo = function(name,details,Department,Person,Priority,emailIdUser){
 			//--------------------------------------------------//
 			var mailObject = {};
@@ -96,7 +99,7 @@
 			postData(tempObject);
 			
 		}
-		
+		//Generic Function to Post data
 		var postData = function(tempObject){
 			
 			$http({
@@ -111,9 +114,9 @@
 		}
 
 	});
-
+	//Defining Controller Two
 	myApp.controller('ticketInfoCtrl', function($scope,$http,$window,$routeParams,sendingEmail) { 
-		//Defining some scopes
+		//Generic Function to GET data
 		var getData = function(){
 			$http({
 					method: 'GET',
@@ -127,6 +130,7 @@
 						
 					});
 		}
+		//Generic Function to DELETE data
 		var deleteData = function(ticket){
 			
 			
@@ -154,7 +158,7 @@
 			sendingEmail.sendMail(mailObject,1000);
 			$scope.message = "Your mail has been sent, thanks for the feedback. We will rectify the issue Immediately."
 		}
-
+		//What TO do when issue rejected or resolved 
 		$scope.isResolved = function(status,ticket){
 
 			if(status != "Pending"){
@@ -165,7 +169,7 @@
 		
 		
 	});
-	
+	//Angular Factory to send mail
 	myApp.factory('sendingEmail',['$http',function($http) {
 		
 
