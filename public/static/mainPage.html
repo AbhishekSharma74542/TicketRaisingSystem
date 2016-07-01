@@ -1,0 +1,73 @@
+	<div  ng-controller="myCtrl">
+		<div class="jumbotron">
+			<h1 class = "title"> 
+				<b>Ticket Raising System</b> 
+			</h1>
+			<h3 class = "title"> 
+				<i><blockquote><kbd>Please Enter the details of your Issue !!!</kbd></blockquote></i>
+			</h3>
+		</div>
+		<br>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6" style="background-color:rgb(6, 228, 167);"><br>
+					<blockquote>Please Enter the Issue Description and your Credentials</blockquote>
+					<form role="form">
+						<div class="form-group">
+							<label for="usr">Your Name:</label>
+							<input type = "text" class="form-control" style = "height:30px;width:90%;margin:10px" ng-model="name" placeholder = "Enter the name">
+							</input>
+						</div>
+						<div class="form-group">
+							<label for="usr">Your Email ID:</label>
+							<input type = "text" class="form-control" style = "height:30px;width:90%;margin:10px" ng-model="emailIdUser" placeholder = "Enter the email-Id">
+							</input>
+						</div>
+						<div class="form-group">
+							<label for="pwd">Your Issue Description</label>
+							<input type = "text" class="form-control" style = "height:129px;width:90%;margin:10px" ng-model="details" placeholder = "Enter the Details"></input>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-6" style="background-color:rgba(53, 228, 9, 0.33);"><br><br>
+					<blockquote>Choose the Person you want to issue the ticket to::</blockquote>
+					<form role="form">
+						<div class="form-group">
+							<label for="sel1">Department: </label>
+							<select  class="form-control" style = "height:30px;width:500px;margin:10px" ng-model="Department" placeholder = "Select the Department" ng-change="changeDepartment(Department)">
+								<option>---Select The Department---</option>
+								<option ng-repeat="Department in Departments">{{Department}}</option>
+							</select>
+						</div>
+					</form>
+					<br>
+					<form role="form">
+						<div class="form-group">
+							<label for="sel1">Person: </label>
+							<select  class="form-control" style = "height:30px;width:500px;margin:10px" ng-model="Person" placeholder = "Select the Person">
+								<option>---Select the Person---</option>
+								<option ng-repeat="person in Persons">{{person.name}} ({{person.emailId}})</option>
+							</select>
+							<br>
+						</div>
+					</form>
+					<form role="form">
+						<div class="form-group">
+							<label for="sel1">Priority Level: </label>
+							<select  class="form-control" style = "height:30px;width:500px;margin:10px" ng-model="Priority" placeholder = "Select the Priority">
+								<option>---Select Priority Level---</option>
+								<option " ng-repeat="priority in Priorities">{{priority}}</option>
+							</select>
+							<br>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<a href="#/ticketInfo">
+		&nbsp <button style = "margin-top:10px" ng-click = "saveInfo(name,details,Department,Person,Priority,emailIdUser)" class="btn btn-success">
+		Yeah Cool ! Please Log Issue !!</button>
+		</a>
+
+
+	</div>

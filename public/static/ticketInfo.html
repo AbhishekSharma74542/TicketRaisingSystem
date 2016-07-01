@@ -1,0 +1,46 @@
+	<div  ng-controller="ticketInfoCtrl">
+		<div class="container-fluid">
+		<h1>Here are the List Of Current Issues</h1>
+		<p>Once finished tap to resolve !!!</p>
+		<br>
+		<br>
+			<div class="row">
+			<div class="col-sm-2" style="background-color:lavender;"></div>
+			<div class="col-sm-8" style="background-color:#20ccac;">
+				<div class="well" style = "margin:30px" ng-repeat = "individualTicket in ticketsInfo">
+					<br>
+					<div class="row"><div class="col-sm-4"><b>NAME ::</b></div><div class="col-sm-8" >{{individualTicket.name}}</div></div>
+					<div class="row"><div class="col-sm-4"><b>ISSUE DETAILS :: </b></div><div class="col-sm-8">{{individualTicket.details}}</div></div>
+					<div class="row"><div class="col-sm-4"><b>DEPARTMENT :: </b></div><div class="col-sm-8">{{individualTicket.Department}}</div></div>
+					<div class="row"><div class="col-sm-4"><b>PERSON :: </b></div><div class="col-sm-8">{{individualTicket.Person}}</div></div>
+					<div class="row"><div class="col-sm-4"><b>PRIORITY :: </b></div><div class="col-sm-8">{{individualTicket.Priority}}</div></div>
+					<div class="row"><div class="col-sm-4"><b>TICKET NO. :: </b></div><div class="col-sm-8">{{individualTicket.ticketNo}}</div></div>
+					<br>
+					<div class="well">
+						Message :: {{individualTicket.message}}<br>
+					</div>
+					<button type="button" class="btn btn-danger" ng-click = "toSendMail(individualTicket)">Send Email Immediatly</button>
+					<br><br>
+					<div class="alert alert-success">
+						<strong>{{message}}</strong> 
+					</div>
+
+
+					<form role="form">
+						<div class="form-group">
+							<br>
+							<label for="sel2">Mutiple select list (hold shift to select more than one):</label>
+							<select class="form-control" ng-model="ResolvedOrPending" placeholder = "Select if resolved" ng-change = "isResolved(ResolvedOrPending,individualTicket.ticketNo)">
+								<option>---Select Your Status---</option>
+								<option " ng-repeat="status in allStatus" >{{status}}</option>
+							</select>
+						</div>
+					</form>
+
+				</div>
+			</div>
+			<div class="col-sm-2" style="background-color:lavender;"></div>
+			</div>
+		</div>
+	<a href = "#/" data-toggle="tooltip" title="Hey! have any other Issue !!" data-placement="top"><button type="button" class="btn btn-primary" style = "float: right;margin-right: 91px;">--Back--</button></a>
+	</div>

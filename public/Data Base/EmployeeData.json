@@ -1,0 +1,57 @@
+{
+	"Department": {
+	           "MARKETING":[
+							{
+								"name" : "Ankit Shrivastav",
+								"emailId": "abhish.sharma1993@gmail.com",
+								"post": "Marketing-Lead",
+								"Project":"Ticket Raising System"
+							},
+							{
+								"name" : "Prerna Sharma",
+								"emailId": "abhishek.sharma74542@gmail.com",
+								"post": "Marketing-Lead",
+								"Project":"Ticket Raising System"
+							},
+							{
+								"name" : "Lalit Yadav",
+								"emailId": "abhishek.sharma74542@gmail.com",
+								"post": "Marketing-Lead",
+								"Project":"Ticket Raising System"
+							}
+						
+			   ],
+			   "TECH":[
+							{
+								"name" : "Madhusudhan Anand",
+								"emailId": "madhu@citizengage.co",
+								"post": "Software Developer",
+								"Project":"Ticket Raising System"
+							},
+							{
+								"name" : "Priyanka Verma",
+								"emailId": "abhishek.sharma74542@gmail.com",
+								"post": "Software Developer",
+								"Project":"Ticket Raising System"
+							},
+							{
+								"name" : "Prem",
+								"emailId": "prem@citizengage.co",
+								"post": "Software Developer",
+								"Project":"Ticket Raising System"
+							}
+						
+			   ],
+			   "SALES":[
+							{
+								"name" : "Abhishek Sharma",
+								"emailId": "abhishek.sharma74542@gmail.com",
+								"post": "Manager",
+								"Project":"Ticket Raising System"
+							}
+						
+			   ]
+			   
+			   
+	}
+}
