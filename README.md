@@ -12,3 +12,7 @@ Resolved within the described time a mail is sent to the handler.
 Just to alarm the handler user can even send the immediate mails.
 Also the Handler can come and reject or resolve the ticket.
 
+How to Start Three simple Steps.
+1 Download Zip File
+2 Go to the folder through command prompt write npm install
+3 then write node application.js 
